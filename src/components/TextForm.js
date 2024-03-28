@@ -18,8 +18,7 @@ export default function TextForm(props) {
         props.showAlert("Your text box is cleared", "Success");
     };
     const handleCpyClick = () => {
-        const txt = document.getElementById('myBox');
-        txt.select();
+        document.getElementById('myBox').select();
         navigator.clipboard.writeText(text);
         props.showAlert("Your text is copied", "Success");
     };
@@ -36,9 +35,9 @@ export default function TextForm(props) {
             </div>
             <div>
                 <h1>Your Text Summary</h1>
-                <p>No of Words: {text.split(" ").filter((element)=>{return element.length !== 0}).length}</p>
+                <p>No of Words: {text.split(/\s+/).filter((element)=>{return element.length !== 0}).length}</p>
                 <p>No of Characters: {text.length}</p>
-                <p>{0.008 * text.split(" ").filter((element)=>{return element.length !== 0}).length} Minute(s) Read</p>
+                <p>{0.008 * text.split(/\s+/).filter((element)=>{return element.length !== 0}).length} Minute(s) Read</p>
                 <h1>Preview of Your Text</h1>
                 <p>{text.length > 0 ? text : "Enter something in the text box to preview" }</p>
             </div>
