@@ -39,8 +39,8 @@ function App() {
         <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <Routes>
-          <Route path="/" element={<TextForm heading="Welcome To TextUtils" mode={mode} showAlert={showAlert} />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/React-TextUtils" element={<TextForm heading="Welcome To TextUtils" mode={mode} showAlert={showAlert} />} />
+          <Route path="/React-TextUtils/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </>
